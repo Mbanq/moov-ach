@@ -29,4 +29,4 @@ jobs:
           tags: ghcr.io/mbanq/moov-ach:${{ env.IMAGE_VERSION }}
           push: true
           build-args: |
-            "MOOV_WIRE_VERSION=${{ env.IMAGE_VERSION }}"
+            "MOOV_ACH_VERSION=${{ env.IMAGE_VERSION }}"
