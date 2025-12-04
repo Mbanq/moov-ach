@@ -1,0 +1,26 @@
+name: Build and Push to GHCR.IO
+
+on:
+  push:
+    branches:
+    - main
+env:
+  IMAGE_VERSION: v1.42.1
+
+jobs:
+  build:
+    name: Build and Push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build:checkout
+        uses: actions/checkout@v2
+      - name: Build:dockerimage
+        uses: docker/build-push-action@v1
+        with:
+          registry: ghcr.io
+          username: "thisisfeeder"
+          password: ${{ secrets.GHCIO }}
+          repository: mbanq/moov-ach
+          tags: ${{ env.IMAGE_VERSION }}
+          build-args: |
+            MOOV_WIRE_VERSION=${{ env.IMAGE_VERSION }}
