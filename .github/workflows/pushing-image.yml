@@ -22,5 +22,5 @@ jobs:
           password: ${{ secrets.GHCIO }}
           repository: mbanq/moov-ach
           tags: ${{ env.IMAGE_VERSION }}
-          build_args: |
+          build-args: |
             MOOV_WIRE_VERSION=${{ env.IMAGE_VERSION }}
