@@ -3,9 +3,9 @@ name: Build and Push to GHCR.IO
 on:
   push:
     branches:
-    - main
+    - v1.42.1-tls
 env:
-  IMAGE_VERSION: v1.42.1
+  IMAGE_VERSION: v1.42.1-tls
 
 jobs:
   build:
